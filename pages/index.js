@@ -1,5 +1,3 @@
-const Hello = function() {
-    return <div>Welcome to next.js!</div>
-}
+const Hello = () => <div>Welcome to next.js!</div>
 
 export default Hello
