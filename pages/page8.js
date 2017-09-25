@@ -1,6 +1,7 @@
 import Footer from "../components/footer2"
 import Head from "next/head"
-import { Button } from "react-bootstrap"
+import MuiThemeProvider from "material-ui/styles/MuiThemeProvider"
+import RaisedButton from "material-ui/RaisedButton"
 
 const Page = () => (
   <div>
@@ -25,7 +26,9 @@ const Page = () => (
     </div>
     <div className="yellow">This is a paragraph with yellow background.</div>
     <p>
-      <Button>Click this bootstrap button!</Button>
+      <MuiThemeProvider>
+        <RaisedButton label="Default" />
+      </MuiThemeProvider>
     </p>
     <Footer text="Footer™ ©2017 Tiago Henriques" />
   </div>
