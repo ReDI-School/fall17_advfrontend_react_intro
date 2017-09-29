@@ -1,10 +1,10 @@
-import Card from "../components/card"
+import Card from "../components/card1"
 import Head from "next/head"
 
 const Page = () => (
   <div>
     <Head>
-      <title>Cards</title>
+      <title>Static cards</title>
       <link rel="stylesheet" href="static/cards.css" />
       <meta name="description" content="List of cards" />
       <meta name="keywords" content="cards" />
