@@ -10,11 +10,10 @@ const Page = () => (
     </Head>
     <h1>My fifth page!</h1>
     <div>
-      This my fifth page. Here we added an HTML5 footer element to the bottom of
-      the page, just to motivate us to start using React components in the next
-      example.
+      This is our fifth page. Here we added an HTML5 footer element to the
+      bottom of the page, just to motivate us to start using React components in
+      the next example.
     </div>
-    <div className="yellow">This is a paragraph with yellow background.</div>
     <hr />
     <footer>Footer™ ©2017 Tiago Henriques</footer>
   </div>

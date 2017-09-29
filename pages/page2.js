@@ -8,7 +8,7 @@ const Page = () => (
     <div>
       <h1>My second page!</h1>
       <div>
-        This my second page. Here we have used next's Head component to
+        This is our second page. Here we have used next's Head component to
         indirectly inject a title element into the head of our page.
       </div>
     </div>

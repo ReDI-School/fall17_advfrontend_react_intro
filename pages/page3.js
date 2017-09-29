@@ -9,9 +9,9 @@ const Page = () => (
     </Head>
     <h1>My third page!</h1>
     <div>
-      This my third page. Here we are injecting meta elements into our page's
-      head element, to allow us to add keywords and a description that can be
-      read by search engines.
+      This is our third page. Here we are injecting meta elements into our
+      page's head element, to allow us to add keywords and a description that
+      can be read by search engines.
     </div>
   </div>
 )
