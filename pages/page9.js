@@ -15,8 +15,10 @@ const Page = () => (
       <link rel="stylesheet" href="static/main.css" />
       <meta name="description" content="Let's make the web great again" />
       <meta name="keywords" content="sample, react, demo, awesome" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta charSet="utf-8" />
     </Head>
-    <p>
+    <div>
       <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
         <div>
           <AppBar
@@ -24,11 +26,16 @@ const Page = () => (
             iconClassNameRight="muidocs-icon-navigation-expand-more"
           />
           <h1>My ninth page!</h1>
-          <div>This page is showing how to use React components from the Material-UI library. We're using an AppBar component at the top, and a RaisedButton below. Before you're able to run this locally, you have to run "npm install" to install the new material-ui dependence.</div>
+          <div>
+            This page is showing how to use React components from the
+            Material-UI library. We're using an AppBar component at the top, and
+            a RaisedButton below. Before you're able to run this locally, you
+            have to run "npm install" to install the new material-ui dependence.
+          </div>
           <RaisedButton label="Hi Redi School!" />
         </div>
       </MuiThemeProvider>
-    </p>
+    </div>
   </div>
 )
 
