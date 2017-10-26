@@ -12,9 +12,9 @@ import TabContents from '../components/TabContents';
 if (typeof window !== 'undefined') injectTapEventPlugin();
 
 class Page10 extends Component {
-  constructor(props) {
-    super(props);
-    
+  constructor() {
+    super();
+
     this.setTheme = this.setTheme.bind(this);
 
     this.state = {
@@ -43,7 +43,7 @@ class Page10 extends Component {
       return getMuiTheme(darkBaseTheme);
     }
   }
-  
+
   render() {
     const { theme } = this.state;
 
