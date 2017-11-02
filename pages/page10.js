@@ -48,15 +48,15 @@ class Page10 extends Component {
     const { theme } = this.state;
 
     return (
-      <MuiThemeProvider muiTheme={getTheme(theme)}>
+      <MuiThemeProvider muiTheme={this.getTheme(theme)}>
         <Card>
           <Tabs>
-            <Tab onActive={setTheme('light')} label='Light Theme (Default)'>
+            <Tab onActive={this.setTheme('light')} label='Light Theme (Default)'>
               <TabContents>
                 <FlatButton label='this is inside the tabs' />
               </TabContents>
             </Tab>
-            <Tab onActive={setTheme('dark')} label='Dark Theme'>
+            <Tab onActive={this.setTheme('dark')} label='Dark Theme'>
               <TabContents />
             </Tab>
           </Tabs>
