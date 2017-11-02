@@ -45,10 +45,8 @@ class Page10 extends Component {
   }
 
   render() {
-    const { theme } = this.state;
-
     return (
-      <MuiThemeProvider muiTheme={this.getTheme(theme)}>
+      <MuiThemeProvider muiTheme={this.getTheme(this.state.theme)}>
         <Card>
           <Tabs>
             <Tab onActive={this.setTheme('light')} label='Light Theme (Default)'>
