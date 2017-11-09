@@ -1,5 +1,5 @@
 import React from "react"
-import Paper from "material-ui/Paper"
+import {Card, CardHeader, CardText} from "material-ui/Card"
 import RaisedButton from "material-ui/RaisedButton"
 
 const { buttonStyle, spanStyle, paperStyle, textStyle } = {
@@ -18,23 +18,22 @@ const { buttonStyle, spanStyle, paperStyle, textStyle } = {
   }
 }
 
-const CustomPaper = ({ title, content, fileSize }) => {
+const CalendarCard = ({ title, startTime, endTime, address, addressModified, agenda }) => {
   /*
   we use conditional rendering with fileSize to render the RaisedButton only when the file size
   is provided. please take a look at https://reactjs.org/docs/conditional-rendering.html
   */
   return (
-    <Paper style={paperStyle} zDepth={2}>
-      <h4 style={textStyle}>{title}</h4>
-      <p style={textStyle}>{content}</p>
-      {fileSize && (
-        <div>
-          <span style={spanStyle}>Relevant file ({fileSize})</span>
-          <RaisedButton label="DOWNLOAD" primary={true} style={buttonStyle} />
-        </div>
-      )}
-    </Paper>
-  )
+    <Card style={paperStyle}>
+    <CardHeader
+      title={title}
+      actAsExpander={true}
+    />
+    <CardText expandable={true}>
+    {agenda}
+    </CardText>
+  </Card>
+)
 }
 
-export default CustomPaper
+export default CalendarCard

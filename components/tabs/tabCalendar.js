@@ -1,6 +1,5 @@
 import React from "react"
-
-import CustomPaper from "../../components/cards/calendarCard"
+import CalendarCard from "../../components/cards/calendarCard"
 
 const events = [
   {
@@ -14,7 +13,8 @@ const events = [
     title: "Week 1: Thu 28 September",
     startTime: "19:00",
     endTime: "21:00",
-    newAddress: "ReDI HQ, Am Nordbahnhof 3, 3rd floor, 10115, Berlin",
+    address: "ReDI HQ, Am Nordbahnhof 3, 3rd floor, 10115, Berlin",
+    addressModified: true,
     agenda: "Once you tap on a card, the card expands, then you can read a whole explanation of the course agenda. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat."
   },
   {
@@ -36,11 +36,10 @@ const events = [
 const TabCalendar = () => {
   return (
     <div>
-      {events.map(({ title, content, fileSize }) => (
-        <CustomPaper
+      {events.map(({ title, agenda }) => (
+        <CalendarCard
           title={title}
-          content={content}
-          fileSize={fileSize}
+          agenda={agenda}
           key={title}
         />
       ))}
