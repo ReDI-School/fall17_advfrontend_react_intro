@@ -1,6 +1,6 @@
 import React from "react"
 
-import CustomPaper from "../components/customPaper"
+import CustomPaper from "../../components/calendarCard"
 
 const events = [
   {

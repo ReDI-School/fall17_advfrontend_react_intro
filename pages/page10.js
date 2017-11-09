@@ -7,7 +7,7 @@ import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
 import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import injectTapEventPlugin from 'react-tap-event-plugin';
-import TabContents from '../components/tabContents';
+import TabContents from '../components/tabs/tabContents';
 
 if (typeof window !== 'undefined') injectTapEventPlugin();
 
