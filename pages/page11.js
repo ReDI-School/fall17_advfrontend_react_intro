@@ -53,29 +53,6 @@ const textStyle = {
   paddingTop: "8px",
   paddingBottom: "8px"
 }
-// const styles = {
-//   headline: {
-//     fontSize: 20,
-//     paddingTop: 16,
-//     marginBottom: 12,
-//     fontWeight: 400
-//   }
-// }
-
-// const styles2 = {
-//   paperLeft: {
-//     flex: 1,
-//     height: "100%",
-//     margin: 10,
-//     padding: 10
-//   },
-//   paperRight: {
-//     height: "100%",
-//     flex: 1,
-//     margin: 10,
-//     padding: 10
-//   }
-// }
 
 export default class Page11 extends React.Component {
   constructor(props) {
