@@ -1,6 +1,6 @@
 import React from "react"
 
-import Homework from "../../components/homeworkCard"
+import Homework from "../../components/cards/homeworkCard"
 
 // this data could be retrieved from a database or an API or ...
 const homeworkList = [

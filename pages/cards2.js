@@ -1,4 +1,4 @@
-import Card from "../components/card2"
+import Card from "../components/cards/card2"
 import Head from "next/head"
 
 const cards = [

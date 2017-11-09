@@ -1,4 +1,4 @@
-import Card from "../components/card1"
+import Card from "../components/cards/card1"
 import Head from "next/head"
 
 const Page = () => (

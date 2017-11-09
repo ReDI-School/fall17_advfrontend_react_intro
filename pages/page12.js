@@ -1,4 +1,4 @@
-import Footer from "../components/footer2"
+import Footer from "../components/footers/footer2"
 import Head from "next/head"
 // Material UI theme
 import lightBaseTheme from "material-ui/styles/baseThemes/lightBaseTheme"
