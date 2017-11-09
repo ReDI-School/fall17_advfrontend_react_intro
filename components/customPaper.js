@@ -19,9 +19,9 @@ const CustomPaper = ({ title, content, fileSize }) => {
     }
   }
 
-  /*  we use conditional rendering with fileSize to render the RaisedButton only when the file size 
-    is provided
-    plese take a look at https://reactjs.org/docs/conditional-rendering.html
+  /*
+  we use conditional rendering with fileSize to render the RaisedButton only when the file size
+  is provided. please take a look at https://reactjs.org/docs/conditional-rendering.html
   */
   return (
     <Paper style={paperStyle} zDepth={2}>

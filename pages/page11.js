@@ -18,29 +18,64 @@ import injectTapEventPlugin from "react-tap-event-plugin"
 
 if (typeof window !== "undefined") injectTapEventPlugin()
 
-const styles = {
-  headline: {
-    fontSize: 20,
-    paddingTop: 16,
-    marginBottom: 12,
-    fontWeight: 400
-  }
+const menuStyle = {
+  backgroundColor: "#00BCD4"
 }
 
-const styles2 = {
-  paperLeft: {
-    flex: 1,
-    height: "100%",
-    margin: 10,
-    padding: 10
-  },
-  paperRight: {
-    height: "100%",
-    flex: 1,
-    margin: 10,
-    padding: 10
-  }
+const tabStyle = {
+  // backgroundColor: "#00BCD4",
+  // tabHighLightColor: "#FFFF8C",
+  marginBottom: "8px"
 }
+
+const globalStyle = {
+  fontFamily: "Roboto",
+  backgroundColor: "#FFFFFF"
+}
+
+const imageStyle = {
+  width: "100%"
+}
+
+const header1Style = {
+  fontSize: "24px"
+}
+
+const paperStyle = {
+  marginLeft: "8px",
+  marginRight: "8px",
+  marginBottom: "8px"
+}
+
+const textStyle = {
+  paddingLeft: "16px",
+  paddingRight: "16px",
+  paddingTop: "8px",
+  paddingBottom: "8px"
+}
+// const styles = {
+//   headline: {
+//     fontSize: 20,
+//     paddingTop: 16,
+//     marginBottom: 12,
+//     fontWeight: 400
+//   }
+// }
+
+// const styles2 = {
+//   paperLeft: {
+//     flex: 1,
+//     height: "100%",
+//     margin: 10,
+//     padding: 10
+//   },
+//   paperRight: {
+//     height: "100%",
+//     flex: 1,
+//     margin: 10,
+//     padding: 10
+//   }
+// }
 
 export default class Page11 extends React.Component {
   constructor(props) {
@@ -67,6 +102,7 @@ export default class Page11 extends React.Component {
                 onLeftIconButtonTouchTap={() =>
                   this.setState({ open: !this.state.open })}
                 title="ReDI: Advanced Frontend"
+                style={{ menuStyle }}
                 zDepth={0}
               />
               <Drawer
@@ -82,50 +118,56 @@ export default class Page11 extends React.Component {
                   Menu Item 2
                 </MenuItem>
               </Drawer>
-              <Tabs>
+              <Tabs style={tabStyle}>
                 <Tab label="COURSE">
                   <div>
-                    <div className="flex-grid">
-                      <Paper
-                        style={{ padding: 10, margin: 10 }}
-                        style={styles2.paperLeft}
-                      >
+                    <div>
+                      <Paper style={paperStyle}>
                         <img
+                          style={imageStyle}
                           src="static/01_course_mobile/course_pic.png"
                           alt="Avatar"
                         />
-                        <h1>
-                          Advanced Frontend web development (Javascript) + React{" "}
-                        </h1>
-                        <p>
-                          Create and deploy a simple web application using
-                          Javascript{" "}
-                        </p>
+                        <div style={textStyle}>
+                          <h1 style={header1Style}>
+                            Advanced Frontend web development (Javascript) +
+                            React{" "}
+                          </h1>
+                          <p>
+                            Create and deploy a simple web application using
+                            Javascript{" "}
+                          </p>
+                        </div>
                       </Paper>
 
-                      <Paper
-                        style={{ padding: 10, margin: 10 }}
-                        style={styles2.paperRight}
-                      >
-                        <h4>When</h4>
-                        <p>Monday and Thursday 19.00-21.00</p>
-                        <p>+TeachTalk: Wednesday 19.00-21.00</p>
-                        <h4>Where</h4>
-                        <p>
-                          Digitales Lernzentrum, Kemperplatz 1a, 7th floor,
-                          10785, Berlin
-                        </p>
+                      <Paper style={paperStyle}>
+                        <div style={textStyle}>
+                          <h4>When</h4>
+                          <p>Monday and Thursday 19.00-21.00</p>
+                          <p>+TeachTalk: Wednesday 19.00-21.00</p>
+                          <h4>Where</h4>
+                          <p>
+                            Digitales Lernzentrum, Kemperplatz 1a, 7th floor,
+                            10785, Berlin
+                          </p>
+                        </div>
                         <img
+                          style={imageStyle}
                           src="static/01_course_mobile/gmap.png"
                           alt="Avatar"
-                        />
+                        />{" "}
                         <div>
-                          <FlatButton label="Open Google Maps" primary={true} />
+                          <div>
+                            <FlatButton
+                              label="Open Google Maps"
+                              primary={true}
+                            />
+                          </div>
                         </div>
                       </Paper>
                     </div>
                   </div>
-                  <Paper style={{ padding: 10, margin: 10 }}>
+                  <Paper style={paperStyle}>
                     <p>After this course, you will be able to:</p>
                     <ol>
                       <li>
@@ -146,13 +188,13 @@ export default class Page11 extends React.Component {
                 </Tab>
                 <Tab label="HOMEWORK">
                   <div>
-                    <h2 style={styles.headline}>Tab Two</h2>
+                    <h2>Tab Two</h2>
                     <p>This is another example tab.</p>
                   </div>
                 </Tab>
                 <Tab label="CALENDER">
                   <div>
-                    <h2 style={styles.headline}>Click the calender</h2>
+                    <h2>Click the calender</h2>
 
                     <DatePicker hintText="calender" />
                   </div>

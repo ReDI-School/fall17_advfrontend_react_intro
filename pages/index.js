@@ -11,6 +11,9 @@ const Hello = () => <div>
         <li><a href="page7">Page 7</a></li>
         <li><a href="page8">Page 8</a></li>
         <li><a href="page9">Page 9</a></li>
+        <li><a href="page10">Page 10</a></li>
+        <li><a href="page11">Page 11</a></li>
+        <li><a href="page12">Page 12</a></li>
     </ul>
     <h2>Using map and flexbox</h2>
     <ul>
