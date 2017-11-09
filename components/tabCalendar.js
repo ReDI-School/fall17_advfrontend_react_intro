@@ -1,6 +1,6 @@
 import React from "react"
 
-import Homework from "../components/customPaper"
+import CustomPaper from "../components/customPaper"
 
 const events = [
   {
@@ -37,7 +37,7 @@ const TabCalendar = () => {
   return (
     <div>
       {events.map(({ title, content, fileSize }) => (
-        <Homework
+        <CustomPaper
           title={title}
           content={content}
           fileSize={fileSize}
