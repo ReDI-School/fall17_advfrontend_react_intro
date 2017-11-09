@@ -1,4 +1,4 @@
-import Footer from "../components/footer3"
+import Footer from "../components/footers/footer3"
 import Head from "next/head"
 
 const Page = () => (

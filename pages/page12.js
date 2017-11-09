@@ -21,10 +21,10 @@ const Page = () => (
   <div>
     <Head>
       <title>My ninth page!</title>
-      <link rel="stylesheet" href="static/main.css" />
       <meta name="description" content="Let's make the web great again" />
       <meta name="keywords" content="sample, react, demo, awesome" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <link rel="stylesheet" href="static/main.css" />
       <link
         rel="stylesheet"
         href="//fonts.googleapis.com/css?family=Roboto:300,400,500"
