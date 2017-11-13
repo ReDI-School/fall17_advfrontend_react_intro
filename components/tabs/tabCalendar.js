@@ -36,9 +36,13 @@ const events = [
 const TabCalendar = () => {
   return (
     <div>
-      {events.map(({ title, agenda }) => (
+      {events.map(({ title,startTime,endTime,address,agenda,addressModified }) => (
         <CalendarCard
           title={title}
+          startTime={startTime}
+          endTime={endTime}
+          address={address}
+          addressModified={addressModified}
           agenda={agenda}
           key={title}
         />
