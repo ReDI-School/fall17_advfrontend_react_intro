@@ -19,7 +19,7 @@ import MenuItem from "material-ui/MenuItem"
 
 if (typeof window !== "undefined") injectTapEventPlugin()
 
-const Page = () => (
+const Page = props => (
   <div>
     <Head>
       <title>My ninth page!</title>
@@ -38,16 +38,11 @@ const Page = () => (
         <div>
           <div>
             <AppBar
-              title="ReDi: Advanced FrontEnd"
+              title={props.url.query.title || "Default Title"}
               iconClassNameRight="muidocs-icon-navigation-expand-more"
             >
-              <Drawer
-                docked={false}
-              >
-                <MenuItem
-                  value={"/"}
-                  primaryText="Home"
-                />
+              <Drawer docked={false}>
+                <MenuItem value={"/"} primaryText="Home" />
               </Drawer>
             </AppBar>
           </div>
