@@ -39,33 +39,34 @@ const CalendarCard = ({
   we use conditional rendering with fileSize to render the RaisedButton only when the file size
   is provided. please take a look at https://reactjs.org/docs/conditional-rendering.html
   */
-  function content() {
-    return (
-      <div>
-        <div style={Style.time}>
-          {startTime}-{endTime}
-        </div>
-        {addressModified ? (
-          <div>
-            <div style={Style.addressModified}>'Place Changed'</div>
-            <div style={{ fontWeight: "500" }}> {address} </div>{" "}
-          </div>
-        ) : (
-          <div style={Style.time}> {address} </div>
-        )}
-        <div
-          style={{ fontWeight: "500", marginTop: "15px", marginBottom: "17px" }}
-        >
-          Agenda
-        </div>
-        <div>{agenda}</div>
-      </div>
-    )
-  }
   return (
     <Card style={paperStyle}>
       <CardHeader title={title} actAsExpander={true} />
-      <CardText expandable={true}>{content()}</CardText>
+      <CardText expandable={true}>
+        <div>
+          <div style={Style.time}>
+            {startTime}-{endTime}
+          </div>
+          {addressModified ? (
+            <div>
+              <div style={Style.addressModified}>'Place Changed'</div>
+              <div style={{ fontWeight: "500" }}> {address} </div>{" "}
+            </div>
+          ) : (
+            <div style={Style.time}> {address} </div>
+          )}
+          <div
+            style={{
+              fontWeight: "500",
+              marginTop: "15px",
+              marginBottom: "17px"
+            }}
+          >
+            Agenda
+          </div>
+          <div>{agenda}</div>
+        </div>
+      </CardText>
     </Card>
   )
 }
