@@ -14,6 +14,8 @@ import injectTapEventPlugin from "react-tap-event-plugin"
 import TabCourses from "../components/tabs/tabCourses"
 import TabHomework from "../components/tabs/tabHomework"
 import TabCalendar from "../components/tabs/tabCalendar"
+import Drawer from "material-ui/Drawer"
+import MenuItem from "material-ui/MenuItem"
 
 if (typeof window !== "undefined") injectTapEventPlugin()
 
@@ -38,7 +40,16 @@ const Page = () => (
             <AppBar
               title="ReDi: Advanced FrontEnd"
               iconClassNameRight="muidocs-icon-navigation-expand-more"
-            />
+            >
+              <Drawer
+                docked={false}
+              >
+                <MenuItem
+                  value={"/"}
+                  primaryText="Home"
+                />
+              </Drawer>
+            </AppBar>
           </div>
           <div>
             <Tabs>
