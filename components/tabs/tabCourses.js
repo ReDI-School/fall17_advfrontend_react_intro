@@ -38,8 +38,19 @@ const textStyle = {
   paddingBottom: "8px"
 }
 
-const TabCourses = ({course}) => {
-  console.log(course)
+const TabCourses = ({
+  course: {
+    title,
+    description,
+    objective,
+    goals,
+    address,
+    schedule,
+    teachTalk,
+    courseImage,
+    requirements
+  }
+}) => {
   return (
     <div>
       <div>
@@ -51,22 +62,22 @@ const TabCourses = ({course}) => {
               alt="Avatar"
             />
             <div style={textStyle}>
-              <h1 style={header1Style}>{course.title}</h1>
-              <p>{course.shortDescription}</p>
+              <h1 style={header1Style}>{title}</h1>
+              <p>{description}</p>
             </div>
           </Paper>
 
           <Paper style={paperStyle}>
             <div style={textStyle}>
               <h4>When</h4>
-              <p>{course.schedule}</p>
-              <p>{course.teachTalk}</p>
+              <p>{schedule}</p>
+              <p>{teachTalk}</p>
               <h4>Where</h4>
-              <p>{course.address}</p>
+              <p>{address}</p>
             </div>
             <img
               style={imageStyle}
-              src={course.courseImage || "static/01_course_mobile/gmap.png"}
+              src={courseImage || "static/01_course_mobile/gmap.png"}
               alt="Avatar"
             />{" "}
             <div>
@@ -78,9 +89,9 @@ const TabCourses = ({course}) => {
         </div>
       </div>
       <Paper style={paperStyle}>
-        <p>{course.objective}</p>
-        <ol>{course.goals.map(goal => <li>{goal}</li>)}</ol>
-        <p>{course.requirements}</p>
+        <p>{objective}</p>
+        <ol>{goals.map(goal => <li>{goal}</li>)}</ol>
+        <p>{requirements}</p>
       </Paper>
     </div>
   )

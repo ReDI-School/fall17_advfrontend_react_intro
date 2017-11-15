@@ -33,7 +33,8 @@ const courses = {
     address: "Digitales Lernzentrum, Kemperplatz 1a, 7th floor, 10785, Berlin",
     schedule: "Monday and Thursday 19.00-21.00",
     teachTalk: "TeachTalk: Wednesday 19.00-21.00",
-    courseImage: "static/01_course_mobile/gmap.png"
+    courseImage: "static/01_course_mobile/gmap.png",
+    requirements: ""
   },
   "java": {
     title: "Java",
@@ -41,7 +42,8 @@ const courses = {
     address: "",
     schedule: "",
     teachTalk: "",
-    courseImage: "static/01_course_mobile/gmap.png"
+    courseImage: "static/01_course_mobile/gmap.png",
+    requirements: ""
   }
 }
 
