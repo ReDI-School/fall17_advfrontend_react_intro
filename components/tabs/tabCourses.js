@@ -38,7 +38,8 @@ const textStyle = {
   paddingBottom: "8px"
 }
 
-const TabCourses = () => {
+const TabCourses = ({course}) => {
+  console.log(course)
   return (
     <div>
       <div>
@@ -50,28 +51,22 @@ const TabCourses = () => {
               alt="Avatar"
             />
             <div style={textStyle}>
-              <h1 style={header1Style}>
-                Advanced Frontend web development (Javascript) + React{" "}
-              </h1>
-              <p>
-                Create and deploy a simple web application using Javascript{" "}
-              </p>
+              <h1 style={header1Style}>{course.title}</h1>
+              <p>{course.shortDescription}</p>
             </div>
           </Paper>
 
           <Paper style={paperStyle}>
             <div style={textStyle}>
               <h4>When</h4>
-              <p>Monday and Thursday 19.00-21.00</p>
-              <p>+TeachTalk: Wednesday 19.00-21.00</p>
+              <p>{course.schedule}</p>
+              <p>{course.teachTalk}</p>
               <h4>Where</h4>
-              <p>
-                Digitales Lernzentrum, Kemperplatz 1a, 7th floor, 10785, Berlin
-              </p>
+              <p>{course.address}</p>
             </div>
             <img
               style={imageStyle}
-              src="static/01_course_mobile/gmap.png"
+              src={course.courseImage || "static/01_course_mobile/gmap.png"}
               alt="Avatar"
             />{" "}
             <div>
@@ -83,17 +78,9 @@ const TabCourses = () => {
         </div>
       </div>
       <Paper style={paperStyle}>
-        <p>After this course, you will be able to:</p>
-        <ol>
-          <li>Apply intermediate skills in front end web development</li>
-          <li>Create a simple web application and deploy it</li>
-          <li>Understand foundational programming principles in Javascript</li>
-          <li>Use the front end development library React</li>
-        </ol>
-        <p>
-          Entry requirements: Basic Frontend Web development course or
-          equivalent skills in JS
-        </p>
+        <p>{course.objective}</p>
+        <ol>{course.goals.map(goal => <li>{goal}</li>)}</ol>
+        <p>{course.requirements}</p>
       </Paper>
     </div>
   )

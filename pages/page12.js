@@ -19,10 +19,39 @@ import MenuItem from "material-ui/MenuItem"
 
 if (typeof window !== "undefined") injectTapEventPlugin()
 
-const Page = props => (
+const courses = {
+  "advfrontend": {
+    title: "Advanced Frontend web development (Javascript)",
+    description: "Create and deploy a simple web application using Javascript",
+    objective: "After this course, you will be able to:",
+    goals: [
+      "abc",
+      "def",
+      "ghi",
+      "jkl"
+    ],
+    address: "Digitales Lernzentrum, Kemperplatz 1a, 7th floor, 10785, Berlin",
+    schedule: "Monday and Thursday 19.00-21.00",
+    teachTalk: "TeachTalk: Wednesday 19.00-21.00",
+    courseImage: "static/01_course_mobile/gmap.png"
+  },
+  "java": {
+    title: "Java",
+    description: "",
+    address: "",
+    schedule: "",
+    teachTalk: "",
+    courseImage: "static/01_course_mobile/gmap.png"
+  }
+}
+
+const Page = (props) => {
+  const courseId = props.url.query.course || "advfrontend"
+  const course = courses[courseId]
+  return (
   <div>
     <Head>
-      <title>My ninth page!</title>
+      <title>My twelfth page!</title>
       <meta name="description" content="Let's make the web great again" />
       <meta name="keywords" content="sample, react, demo, awesome" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -38,7 +67,7 @@ const Page = props => (
         <div>
           <div>
             <AppBar
-              title={props.url.query.title || "Default Title"}
+              title={course.title || "Default Course"}
               iconClassNameRight="muidocs-icon-navigation-expand-more"
             >
               <Drawer docked={false}>
@@ -49,13 +78,13 @@ const Page = props => (
           <div>
             <Tabs>
               <Tab label="COURSES">
-                <TabCourses />
+                <TabCourses course={course} />
               </Tab>
               <Tab label="HOMEWORK">
-                <TabHomework />
+                <TabHomework course={course} />
               </Tab>
               <Tab label="CALENDAR">
-                <TabCalendar />
+                <TabCalendar course={course} />
               </Tab>
             </Tabs>
           </div>
@@ -64,5 +93,6 @@ const Page = props => (
     </div>
   </div>
 )
+}
 
 export default Page
