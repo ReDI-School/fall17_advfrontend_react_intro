@@ -64,7 +64,7 @@ export default class Page11 extends React.Component {
     return (
       <div>
         <Head>
-          <title>ReDI: Advanced Frontend</title>
+          <title>My eleventh page!</title>
           <link rel="stylesheet" href="static/style.css" />
           <meta name="description" content="Let's make the web great again" />
           <meta name="keywords" content="sample, react, demo, awesome" />
