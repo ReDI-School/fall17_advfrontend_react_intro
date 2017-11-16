@@ -11,9 +11,9 @@ import Paper from "material-ui/Paper"
 import RaisedButton from "material-ui/RaisedButton"
 import injectTapEventPlugin from "react-tap-event-plugin"
 
-import TabCourses from "../components/tabs/tabCourses"
-import TabHomework from "../components/tabs/tabHomework"
-import TabCalendar from "../components/tabs/tabCalendar"
+import TabCourses from "../components/tabs/courseTab"
+import TabHomework from "../components/tabs/homeworkTab"
+import TabCalendar from "../components/tabs/calendarTab"
 import Drawer from "material-ui/Drawer"
 import MenuItem from "material-ui/MenuItem"
 
