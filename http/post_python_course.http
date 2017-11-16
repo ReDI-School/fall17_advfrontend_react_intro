@@ -1,0 +1,27 @@
+POST https://json-server-test.now.sh/courses HTTP/1.1
+Content-Type: application/json
+
+{
+  "id": "python",
+  "title": "Python dev",
+  "description": "how much wood would a woodchuck chuck if a woodchuck could chuck wood",
+  "objective": "bla bla python objectives bla",
+  "goals": [
+    "1st goal"
+  ],
+  "address": "python city",
+  "schedule": "soon!",
+  "teachTalk": "of course!",
+  "courseImage": "static/01_course_mobile/gmap.png",
+  "requirements": "none!",
+  "events": [
+    {
+      "title": "1st python event"
+    }
+  ],
+  "assignments": [
+    {
+      "title": "1st python assignment"
+    }
+  ]
+}
