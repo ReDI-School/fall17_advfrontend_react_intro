@@ -17,16 +17,19 @@ import CalendarTab from "../components/tabs/calendarTab"
 import Drawer from "material-ui/Drawer"
 import MenuItem from "material-ui/MenuItem"
 
+import get from "../services/get"
+
 if (typeof window !== "undefined") injectTapEventPlugin()
 
 export default class extends React.Component {
   static async getInitialProps() {
-    const courses = await import("../data/courses.json")
+    const response = await get("/courses")
+    const courses = await response.json()
     return { courses }
   }
   render() {
     const courseId = this.props.url.query.course || "advfrontend"
-    const course = this.props.courses[courseId]
+    const course = this.props.courses.filter(course => course.id === courseId)[0]
     return (
       <div>
         <Head>
