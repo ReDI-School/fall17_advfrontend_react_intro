@@ -11,9 +11,9 @@ import Paper from "material-ui/Paper"
 import RaisedButton from "material-ui/RaisedButton"
 import injectTapEventPlugin from "react-tap-event-plugin"
 
-import TabCourses from "../components/tabs/courseTab"
-import TabHomework from "../components/tabs/homeworkTab"
-import TabCalendar from "../components/tabs/calendarTab"
+import CourseTab from "../components/tabs/courseTab"
+import HomeworkTab from "../components/tabs/homeworkTab"
+import CalendarTab from "../components/tabs/calendarTab"
 import Drawer from "material-ui/Drawer"
 import MenuItem from "material-ui/MenuItem"
 
@@ -57,13 +57,13 @@ export default class extends React.Component {
               <div>
                 <Tabs>
                   <Tab label="COURSES">
-                    <TabCourses course={course} />
+                    <CourseTab course={course} />
                   </Tab>
                   <Tab label="HOMEWORK">
-                    <TabHomework course={course} />
+                    <HomeworkTab course={course} />
                   </Tab>
                   <Tab label="CALENDAR">
-                    <TabCalendar course={course} />
+                    <CalendarTab course={course} />
                   </Tab>
                 </Tabs>
               </div>
