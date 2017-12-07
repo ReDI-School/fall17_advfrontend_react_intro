@@ -1,3 +1,5 @@
+import Head from "next/head"
+
 const Rating = React.createClass({
   render() {
     const items = []
@@ -28,17 +30,25 @@ const RatingExample = React.createClass({
   render() {
     return (
       <div>
-        Rating is {this.state.rating}
-        <br />
-        Clickable Rating <br />
-        <Rating
-          value={this.state.rating}
-          max="10"
-          onRatingSelected={this.handleRatingSelected}
-        />
-        <br />
-        Readonly rating <br />
-        <Rating value={this.state.rating} max="10" />
+        <Head>
+          <title>My ninth page!</title>
+          <link rel="stylesheet" href="static/rating.css" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <meta charSet="utf-8" />
+        </Head>
+        <div>
+          Rating is {this.state.rating}
+          <br />
+          Clickable Rating <br />
+          <Rating
+            value={this.state.rating}
+            max="10"
+            onRatingSelected={this.handleRatingSelected}
+          />
+          <br />
+          Readonly rating <br />
+          <Rating value={this.state.rating} max="10" />
+        </div>
       </div>
     )
   }
