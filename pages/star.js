@@ -4,12 +4,13 @@ class Rating extends React.Component {
   render() {
     const items = []
     for (let i = 1; i <= this.props.max; i++) {
-      const clickHandler =
-        this.props.onRatingSelected && this.props.onRatingSelected.bind(null, i)
       items.push(
         <li
           className={i <= this.props.value && "filled"}
-          onClick={clickHandler}
+          onClick={
+            this.props.onRatingSelected &&
+            this.props.onRatingSelected.bind(null, i)
+          }
         >
           {"\u2605"}
         </li>
