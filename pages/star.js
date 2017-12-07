@@ -20,19 +20,19 @@ class Rating extends React.Component {
   }
 }
 
-class RatingExample extends React.Component {
+const RatingExample = React.createClass({
   getInitialState() {
     return { rating: 5 }
-  }
+  },
   handleRatingSelected(rating) {
     this.setState({ rating })
     alert(`Rating selected: ${rating}`)
-  }
+  },
   render() {
     return (
       <div>
         <Head>
-          <title>My ninth page!</title>
+          <title>My star rating page!</title>
           <link rel="stylesheet" href="static/rating.css" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta charSet="utf-8" />
@@ -53,6 +53,6 @@ class RatingExample extends React.Component {
       </div>
     )
   }
-}
+})
 
 export default RatingExample
