@@ -17,7 +17,7 @@ import CalendarTab from "../components/tabs/calendarTab"
 import Drawer from "material-ui/Drawer"
 import MenuItem from "material-ui/MenuItem"
 
-import get from "../services/get"
+import get from "../services/json-server/get"
 
 if (typeof window !== "undefined") injectTapEventPlugin()
 

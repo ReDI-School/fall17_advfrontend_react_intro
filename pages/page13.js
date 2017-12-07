@@ -22,7 +22,7 @@ import HomeworkTab from "../components/tabs/homeworkTab"
 import CalendarTab from "../components/tabs/calendarTab"
 
 
-import get from "../services/get"
+import get from "../services/json-server/get"
 
 if (typeof window !== "undefined") injectTapEventPlugin()
 
