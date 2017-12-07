@@ -19,14 +19,14 @@ class Rating extends React.Component {
   }
 }
 
-const RatingExample = React.createClass({
+class RatingExample extends React.Component {
   getInitialState() {
     return { rating: 5 }
-  },
+  }
   handleRatingSelected(rating) {
     this.setState({ rating })
     alert(`Rating selected: ${rating}`)
-  },
+  }
   render() {
     return (
       <div>
@@ -52,6 +52,6 @@ const RatingExample = React.createClass({
       </div>
     )
   }
-})
+}
 
 export default RatingExample
