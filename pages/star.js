@@ -1,6 +1,6 @@
 import Head from "next/head"
 
-const Rating = React.createClass({
+class Rating extends React.Component {
   render() {
     const items = []
     for (let i = 1; i <= this.props.max; i++) {
@@ -17,7 +17,7 @@ const Rating = React.createClass({
     }
     return <ul className="rating">{items}</ul>
   }
-})
+}
 
 const RatingExample = React.createClass({
   getInitialState() {
@@ -25,7 +25,7 @@ const RatingExample = React.createClass({
   },
   handleRatingSelected(rating) {
     this.setState({ rating })
-    alert(`Rating selected - ${rating}`)
+    alert(`Rating selected: ${rating}`)
   },
   render() {
     return (
