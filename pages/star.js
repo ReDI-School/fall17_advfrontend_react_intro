@@ -1,8 +1,8 @@
-const FundooRating = React.createClass({
-  render: function() {
-    var items = []
-    for (var i = 1; i <= this.props.max; i++) {
-      var clickHandler =
+const Rating = React.createClass({
+  render() {
+    const items = []
+    for (let i = 1; i <= this.props.max; i++) {
+      const clickHandler =
         this.props.onRatingSelected && this.props.onRatingSelected.bind(null, i)
       items.push(
         <li
@@ -17,31 +17,31 @@ const FundooRating = React.createClass({
   }
 })
 
-const FundooDirectiveTutorial = React.createClass({
-  getInitialState: function() {
+const RatingExample = React.createClass({
+  getInitialState() {
     return { rating: 5 }
   },
-  handleRatingSelected: function(rating) {
-    this.setState({ rating: rating })
-    alert("Rating selected - " + rating)
+  handleRatingSelected(rating) {
+    this.setState({ rating })
+    alert(`Rating selected - ${rating}`)
   },
-  render: function() {
+  render() {
     return (
       <div>
         Rating is {this.state.rating}
         <br />
         Clickable Rating <br />
-        <FundooRating
+        <Rating
           value={this.state.rating}
           max="10"
           onRatingSelected={this.handleRatingSelected}
         />
         <br />
         Readonly rating <br />
-        <FundooRating value={this.state.rating} max="10" />
+        <Rating value={this.state.rating} max="10" />
       </div>
     )
   }
 })
 
-export default FundooDirectiveTutorial
+export default RatingExample
