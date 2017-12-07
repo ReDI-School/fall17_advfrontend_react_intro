@@ -77,7 +77,25 @@ export default class extends React.Component {
                     open={this.state.drawerOpen}
                     onRequestChange={this.switchDrawer}
                   >
-                    <Subheader>Redi School Courses</Subheader>
+                    <Subheader
+                      style={{
+                        height: "172px",
+                        width: "304px",
+                        backgroundColor: "#00BCD4",
+                        color: "#FFFFFF",
+                        fontSize: "16px",
+                        fontWeight: "normal"
+                      }}
+                    >
+                      <img
+                        style={{ marginTop: "40px" }}
+                        src="/static/04_menu_mobile/redi_avatar.png"
+                        alt="Redi avatar"
+                      />
+                      <div style={{ marginBottom: "26px" }}>
+                        ReDI School of Digital Integration
+                      </div>
+                    </Subheader>
                     {this.props.courses.map((item, index) => (
                       <MenuItem
                         key={item.id}
