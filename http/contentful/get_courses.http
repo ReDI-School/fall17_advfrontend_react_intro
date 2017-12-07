@@ -1,0 +1,2 @@
+GET https://cdn.contentful.com/spaces/REPLACE_WITH_YOUR_CONTENTFUL_SPACE_ID/entries?content_type=course&access_token=REPLACE_WITH_YOUR_CONTENTFUL_ACCESS_TOKEN HTTP/1.1
+Content-Type: application/json
