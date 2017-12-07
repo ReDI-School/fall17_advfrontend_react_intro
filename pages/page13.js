@@ -80,7 +80,7 @@ export default class extends React.Component {
                   >
                     <Subheader>The MENU</Subheader>
                     {this.props.courses.map((item, index) => (
-                      <MenuItem key={item.title}>{item.title}</MenuItem>
+                      <MenuItem key={item.title} primaryText={item.title} href={`page13?course=${item.id}`} />
                     ))}
                   </Drawer>
                 </AppBar>
