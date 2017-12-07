@@ -1,6 +1,6 @@
 // next.js stuff
 import Head from "next/head"
-import Link from 'next/link'
+import Link from "next/link"
 
 // Material UI
 import lightBaseTheme from "material-ui/styles/baseThemes/lightBaseTheme"
@@ -20,7 +20,6 @@ import Footer from "../components/footers/footer2"
 import CourseTab from "../components/tabs/courseTab"
 import HomeworkTab from "../components/tabs/homeworkTab"
 import CalendarTab from "../components/tabs/calendarTab"
-
 
 import get from "../services/json-server/get"
 
@@ -78,9 +77,13 @@ export default class extends React.Component {
                     open={this.state.drawerOpen}
                     onRequestChange={this.switchDrawer}
                   >
-                    <Subheader>The MENU</Subheader>
+                    <Subheader>Redi School Courses</Subheader>
                     {this.props.courses.map((item, index) => (
-                      <MenuItem key={item.title} primaryText={item.title} href={`page13?course=${item.id}`} />
+                      <MenuItem
+                        key={item.id}
+                        primaryText={item.title}
+                        href={`page13?course=${item.id}`}
+                      />
                     ))}
                   </Drawer>
                 </AppBar>
