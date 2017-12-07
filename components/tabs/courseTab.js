@@ -90,7 +90,7 @@ const TabCourses = ({
       </div>
       <Paper style={paperStyle}>
         <p>{objective}</p>
-        <ol>{goals.map(goal => <li>{goal}</li>)}</ol>
+        <ol>{goals.map((goal, index) => <li key={index}>{goal}</li>)}</ol>
         <p>{requirements}</p>
       </Paper>
     </div>
