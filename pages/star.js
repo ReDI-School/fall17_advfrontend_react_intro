@@ -1,31 +1,28 @@
 import Head from "next/head"
 
-class Rating extends React.Component {
-  render() {
-    const items = []
-    for (let i = 1; i <= this.props.max; i++) {
-      items.push(i)
-    }
-    return (
-      <ul className="rating">
-        {items.map(value => (
-          <li
-            key={value}
-            className={value <= this.props.value && "filled"}
-            onClick={
-              this.props.onRatingSelected &&
-              this.props.onRatingSelected.bind(null, value)
-            }
-          >
-            {"\u2605"}
-          </li>
-        ))}
-      </ul>
-    )
+const StatelessRating = props => {
+  const items = []
+  for (let i = 1; i <= props.max; i++) {
+    items.push(i)
   }
+  return (
+    <ul className="rating">
+      {items.map(value => (
+        <li
+          key={value}
+          className={value <= props.value && "filled"}
+          onClick={
+            props.onRatingSelected && props.onRatingSelected.bind(null, value)
+          }
+        >
+          {"\u2605"}
+        </li>
+      ))}
+    </ul>
+  )
 }
 
-class RatingExample extends React.Component {
+export default class RatingExample extends React.Component {
   constructor(props) {
     super(props)
     this.state = { rating: 5 }
@@ -53,18 +50,16 @@ class RatingExample extends React.Component {
           Rating is {this.state.rating}
           <br />
           Clickable Rating <br />
-          <Rating
+          <StatelessRating
             value={this.state.rating}
             max={10}
             onRatingSelected={this.handleRatingSelected}
           />
           <br />
           Readonly rating <br />
-          <Rating value={this.state.rating} max={10} />
+          <StatelessRating value={this.state.rating} max={10} />
         </div>
       </div>
     )
   }
 }
-
-export default RatingExample
