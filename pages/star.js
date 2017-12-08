@@ -4,19 +4,25 @@ class Rating extends React.Component {
   render() {
     const items = []
     for (let i = 1; i <= this.props.max; i++) {
-      items.push(
-        <li
-          className={i <= this.props.value && "filled"}
-          onClick={
-            this.props.onRatingSelected &&
-            this.props.onRatingSelected.bind(null, i)
-          }
-        >
-          {"\u2605"}
-        </li>
-      )
+      items.push(i)
     }
-    return <ul className="rating">{items}</ul>
+    return (
+      <ul className="rating">
+        {items.map((value, index) => {
+          return (
+            <li
+              className={value <= this.props.value && "filled"}
+              onClick={
+                this.props.onRatingSelected &&
+                this.props.onRatingSelected.bind(null, value)
+              }
+            >
+              {"\u2605"}
+            </li>
+          )
+        })}
+      </ul>
+    )
   }
 }
 
