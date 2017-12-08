@@ -29,9 +29,11 @@ class RatingExample extends React.Component {
   constructor(props) {
     super(props)
     this.state = { rating: 5 }
+    // event handler methods need to be passed as bound functions
+    this.handleRatingSelected = this.handleRatingSelected.bind(this)
   }
 
-  handleRatingSelected = (rating) => {
+  handleRatingSelected(rating) {
     this.setState({ rating })
     // This event handler should trigger an HTTP POST request to change rating.
     // Your code should go here.
