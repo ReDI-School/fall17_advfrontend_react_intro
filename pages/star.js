@@ -8,19 +8,18 @@ class Rating extends React.Component {
     }
     return (
       <ul className="rating">
-        {items.map((value, index) => {
-          return (
-            <li
-              className={value <= this.props.value && "filled"}
-              onClick={
-                this.props.onRatingSelected &&
-                this.props.onRatingSelected.bind(null, value)
-              }
-            >
-              {"\u2605"}
-            </li>
-          )
-        })}
+        {items.map(value => (
+          <li
+            key={value}
+            className={value <= this.props.value && "filled"}
+            onClick={
+              this.props.onRatingSelected &&
+              this.props.onRatingSelected.bind(null, value)
+            }
+          >
+            {"\u2605"}
+          </li>
+        ))}
       </ul>
     )
   }
