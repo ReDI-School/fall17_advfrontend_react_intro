@@ -65,6 +65,11 @@ const Hello = () => (
           <a>Page 12</a>
         </Link>
       </li>
+      <li>
+        <Link href="page13">
+          <a>Page 13</a>
+        </Link>
+      </li>
     </ul>
     <h2>Using map and flexbox</h2>
     <ul>
