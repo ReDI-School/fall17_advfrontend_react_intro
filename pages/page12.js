@@ -29,7 +29,9 @@ export default class extends React.Component {
   }
   render() {
     const courseId = this.props.url.query.course || "advfrontend"
-    const course = this.props.courses.filter(course => course.id === courseId)[0]
+    const course = this.props.courses.filter(
+      course => course.id === courseId
+    )[0]
     return (
       <div>
         <Head>

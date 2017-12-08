@@ -77,7 +77,8 @@ export default class Page11 extends React.Component {
               <AppBar
                 iconClassNameRight="muidocs-icon-navigation-expand-more"
                 onLeftIconButtonTouchTap={() =>
-                  this.setState({ open: !this.state.open })}
+                  this.setState({ open: !this.state.open })
+                }
                 title="ReDI: Advanced Frontend"
                 style={{ menuStyle }}
                 zDepth={0}

@@ -26,7 +26,9 @@ const RatingExample = React.createClass({
   },
   handleRatingSelected(rating) {
     this.setState({ rating })
-    alert(`Rating selected: ${rating}`)
+    // This event handler should trigger an HTTP POST request to change rating.
+    // Your code should go here.
+    // Use /services/json-server/post.js or /services/contentful/post.js
   },
   render() {
     return (
