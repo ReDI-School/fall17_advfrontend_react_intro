@@ -50,12 +50,12 @@ const RatingExample = React.createClass({
           Clickable Rating <br />
           <Rating
             value={this.state.rating}
-            max="10"
+            max={10}
             onRatingSelected={this.handleRatingSelected}
           />
           <br />
           Readonly rating <br />
-          <Rating value={this.state.rating} max="10" />
+          <Rating value={this.state.rating} max={10} />
         </div>
       </div>
     )
