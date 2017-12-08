@@ -25,16 +25,19 @@ class Rating extends React.Component {
   }
 }
 
-const RatingExample = React.createClass({
-  getInitialState() {
-    return { rating: 5 }
-  },
-  handleRatingSelected(rating) {
+class RatingExample extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = { rating: 5 }
+  }
+
+  handleRatingSelected = (rating) => {
     this.setState({ rating })
     // This event handler should trigger an HTTP POST request to change rating.
     // Your code should go here.
     // Use /services/json-server/post.js or /services/contentful/post.js
-  },
+  }
+
   render() {
     return (
       <div>
@@ -60,6 +63,6 @@ const RatingExample = React.createClass({
       </div>
     )
   }
-})
+}
 
 export default RatingExample
