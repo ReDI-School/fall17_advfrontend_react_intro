@@ -1,10 +1,10 @@
 import React from "react"
 import CalendarCard from "../../components/cards/calendarCard"
 
-const TabCalendar = ({ course: { events } }) => {
+const CalendarTab = ({ course: { events } }) => {
   return (
     <div>
-      {events.map(
+      {/* {events.map(
         ({ title, startTime, endTime, address, agenda, addressModified }) => (
           <CalendarCard
             title={title}
@@ -16,9 +16,9 @@ const TabCalendar = ({ course: { events } }) => {
             key={title}
           />
         )
-      )}
+      )} */}
     </div>
   )
 }
 
-export default TabCalendar
+export default CalendarTab

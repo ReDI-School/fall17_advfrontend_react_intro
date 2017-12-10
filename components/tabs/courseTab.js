@@ -38,7 +38,7 @@ const textStyle = {
   paddingBottom: "8px"
 }
 
-const TabCourses = ({
+const CourseTab = ({
   course: {
     title,
     description,
@@ -97,4 +97,4 @@ const TabCourses = ({
   )
 }
 
-export default TabCourses
+export default CourseTab
