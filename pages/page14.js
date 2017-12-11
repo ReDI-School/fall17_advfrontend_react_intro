@@ -28,14 +28,13 @@ if (typeof window !== "undefined") injectTapEventPlugin()
 
 export default class extends React.Component {
   static async getInitialProps() {
-    const path = `/spaces/${
-      space_id
-    }/entries?content_type=course&access_token=${access_token}`
+    const path = `/spaces/${space_id}/entries?content_type=course&access_token=${access_token}`
     const response = await get(path)
     const responseJson = await response.json()
     const items = responseJson.items
     const courses = items.map(item => item.fields)
-    return { courses }
+    const { includes: { Entry } } = responseJson
+    return { courses, Entry }
   }
   constructor(props) {
     super(props)
@@ -55,6 +54,55 @@ export default class extends React.Component {
     const course = this.props.courses.filter(
       course => course.id === courseId
     )[0]
+    const entries = this.props.Entry
+
+    // create an array to store all assignments ids for this course in it
+    const assignmentsIds =
+      course.assignments &&
+      course.assignments.map(assignment => assignment.sys.id)
+
+    // create an array to store all events ids for this course in it
+    const eventsIds = course.events && course.events.map(event => event.sys.id)
+
+    /*
+    create an object that has the course's assignments and events as properties
+    ex: 
+     {
+      assignments: [
+        {title, conten},
+        {title, conten},
+        {title, conten}
+      ],
+      events: [
+        {tile, id},
+        {tile, id},
+        {tile, id}
+      ]
+    }
+    */
+    const { assignments, events } = entries.reduce((accumulator, entry) => {
+      // check if the entry is an assignment for the current course
+      if (assignmentsIds && assignmentsIds.indexOf(entry.sys.id) !== -1) {
+        //Yes:
+        // check if the acc has assigment property and if not just assign an empty array to it
+        accumulator.assignments = accumulator.assignments || []
+        // push the entry to the assignments property
+        accumulator.assignments.push(entry.fields)
+      }
+
+      // check if the entry is an event for the current course
+      if (eventsIds && eventsIds.indexOf(entry.sys.id) !== -1) {
+        //Yes:
+        // check if the acc has events property and if not just assign an empty array to it
+        accumulator.events = accumulator.events || []
+        //push it to the events property
+        accumulator.events.push(entry.fields)
+      }
+
+      // return the accumulator if the entry is not an event nor an assignment
+      return accumulator
+    }, {})
+
     return (
       <div>
         <Head>
@@ -106,7 +154,7 @@ export default class extends React.Component {
                       <MenuItem
                         key={item.id}
                         primaryText={item.title}
-                        href={`page13?course=${item.id}`}
+                        href={`page14?course=${item.id}`}
                       />
                     ))}
                   </Drawer>
@@ -118,10 +166,10 @@ export default class extends React.Component {
                     <CourseTab course={course} />
                   </Tab>
                   <Tab label="HOMEWORK">
-                    <HomeworkTab course={course} />
+                    <HomeworkTab assignments={assignments} />
                   </Tab>
                   <Tab label="CALENDAR">
-                    <CalendarTab course={course} />
+                    <CalendarTab events={events} />
                   </Tab>
                 </Tabs>
               </div>
